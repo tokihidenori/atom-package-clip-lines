@@ -13,7 +13,7 @@
     "row number",
     "file path"
   ],
-  "repository": "https://github.com/atom/clip-lines",
+  "repository": "https://github.com/tokihidenori/atom-package-clip-lines.git",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
