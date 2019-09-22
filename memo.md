@@ -51,7 +51,7 @@ path/to/openfile: 14-19
 
 ## gitリポジトリ
 
-
+https://github.com/tokihidenori/atom-package-clip-lines.git
 
 ## 参考
 
