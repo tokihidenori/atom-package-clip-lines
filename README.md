@@ -1,5 +1,35 @@
 # clip-lines package
 
-A short description of your package.
+Clipping file lines and line numbers
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+# How to use
+
+1. Selected File Lines.
+2. Continue `clip-lines:copy` until you get entry you want.
+
+# clip sample
+
+```
+/Users/.../github/copy-file-lines/README.md: 8
+
+2. Continue `clip-lines:copy` until you get entry you want.
+```
+
+# Keymap
+
+- Mac: ctrl + opt + c
+- Win: ctrl + alt + c
+
+# Config
+
+- lineEndingCode
+
+  default: \n
+
+- lineNumberSepalater
+
+  default: |
+
+- enableMarkDownFormat
+
+  default: true
