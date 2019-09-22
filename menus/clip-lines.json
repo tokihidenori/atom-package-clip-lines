@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Copy File Lines",
+        "command": "clip-lines:copy"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Copy File Lines",
+          "submenu": [
+            {
+              "label": "Copy",
+              "command": "clip-lines:copy"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

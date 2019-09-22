@@ -1,0 +1,23 @@
+{
+  "name": "clip-lines",
+  "main": "./lib/clip-lines",
+  "version": "0.0.0",
+  "description": "Clipping file lines and line numbers",
+  "keywords": [
+    "copy",
+    "clip",
+    "clipboard",
+    "line",
+    "line number",
+    "row",
+    "row number",
+    "file path"
+  ],
+  "repository": "https://github.com/atom/clip-lines",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
