@@ -14,6 +14,8 @@ describe('CopyFileLines', () => {
 
   describe(`when the ${myPackageName}:copy event is triggered`, () => {
     beforeEach(() => {
+      // // テスト用のファイルを開く
+      // waitsForPromise(() => { return atom.project.addPath(path.join(__dirname, 'fixtures')) });
       // テスト用のファイルを開く
       waitsForPromise(() => { return atom.workspace.open(path.join(__dirname, 'fixtures', 'sample.txt')) });
       // パッケージをアクティベーション
@@ -24,6 +26,7 @@ describe('CopyFileLines', () => {
         textEditor = atom.workspace.getActiveTextEditor();
         textEditorElement = atom.views.getView(textEditor);
         textEditor.selectAll();
+        filePath = atom.project.relativizePath(textEditor.getPath())[1];
       });
     });
 
@@ -40,7 +43,7 @@ describe('CopyFileLines', () => {
     describe("default setting", function() {
       it("copy selected lines", () => {
         CopyFileLines.copy();
-        expect(txtTrim(atom.clipboard.read())).toEqual(`${textEditor.getPath()}: 1-4\`\`\`1| 'use babel';2| 3| import { CompositeDisposable } from 'atom';4| \`\`\``);
+        expect(txtTrim(atom.clipboard.read())).toEqual(`${filePath}: 1-4\`\`\`1| 'use babel';2| 3| import { CompositeDisposable } from 'atom';4| \`\`\``);
       });
     });
 
@@ -52,7 +55,7 @@ describe('CopyFileLines', () => {
 
         it("copy selected lines", () => {
           CopyFileLines.copy();
-          expect(txtTrim(atom.clipboard.read())).toEqual(`${textEditor.getPath()}: 1-4\`\`\`1: 'use babel';2: 3: import { CompositeDisposable } from 'atom';4: \`\`\``);
+          expect(txtTrim(atom.clipboard.read())).toEqual(`${filePath}: 1-4\`\`\`1: 'use babel';2: 3: import { CompositeDisposable } from 'atom';4: \`\`\``);
         });
       });
 
@@ -63,7 +66,18 @@ describe('CopyFileLines', () => {
 
         it("copy selected lines", () => {
           CopyFileLines.copy();
-          expect(txtTrim(atom.clipboard.read())).toEqual(`${textEditor.getPath()}: 1-41| 'use babel';2| 3| import { CompositeDisposable } from 'atom';4| `);
+          expect(txtTrim(atom.clipboard.read())).toEqual(`${filePath}: 1-41| 'use babel';2| 3| import { CompositeDisposable } from 'atom';4| `);
+        });
+      });
+
+      describe("notIncludeRootInPath: false", function() {
+        beforeEach(() => {
+          atom.config.set('clip-lines.notIncludeRootInPath', false);
+        });
+
+        it("copy selected lines", () => {
+          CopyFileLines.copy();
+          expect(txtTrim(atom.clipboard.read())).toEqual(`${textEditor.getPath()}: 1-4\`\`\`1| 'use babel';2| 3| import { CompositeDisposable } from 'atom';4| \`\`\``);
         });
       });
     });

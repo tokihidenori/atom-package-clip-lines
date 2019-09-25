@@ -4,7 +4,7 @@ Clipping file lines and line numbers
 
 # How to use
 
-1. Selected File Lines.
+1. Select File Lines.
 2. Continue `clip-lines:copy` until you get entry you want.
 
 # clip sample
