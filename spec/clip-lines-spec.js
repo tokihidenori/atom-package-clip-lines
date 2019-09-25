@@ -14,8 +14,6 @@ describe('CopyFileLines', () => {
 
   describe(`when the ${myPackageName}:copy event is triggered`, () => {
     beforeEach(() => {
-      // // テスト用のファイルを開く
-      // waitsForPromise(() => { return atom.project.addPath(path.join(__dirname, 'fixtures')) });
       // テスト用のファイルを開く
       waitsForPromise(() => { return atom.workspace.open(path.join(__dirname, 'fixtures', 'sample.txt')) });
       // パッケージをアクティベーション
