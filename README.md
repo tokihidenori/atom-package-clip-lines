@@ -5,14 +5,29 @@ Clipping file lines and line numbers
 # How to use
 
 1. Select File Lines.
-2. Continue `clip-lines:copy` until you get entry you want.
+2. Run Command `clip-lines:copy`
 
 # clip sample
 
 ```
-/Users/.../github/copy-file-lines/README.md: 8
+path/to/README.md: 1-20
 
-2. Continue `clip-lines:copy` until you get entry you want.
+5| # How to use
+6|
+7| 1. Select File Lines.
+8| 2. Run Command `clip-lines:copy`
+9|
+10| # clip sample
+11|
+12| ```
+13| /Users/.../github/copy-file-lines/README.md: 8
+14|
+15| 2. Continue `clip-lines:copy` until you get entry you want.
+16| ```
+17|
+18| # Keymap
+19|
+20| - Mac: ctrl + opt + c
 ```
 
 # Keymap
@@ -31,5 +46,9 @@ Clipping file lines and line numbers
   default: |
 
 - enableMarkDownFormat
+
+  default: true
+
+- notIncludeRootInPath
 
   default: true
