@@ -49,6 +49,24 @@ path/to/README.md: 1-20
 
   default: true
 
+- includeFilepathInSyntaxMarkDownHighlight
+
+  default: false
+  ### sample
+
+  >js:lib/clip-lines.js(7-16)
+  7|     lineEndingCode: {
+  8|       type: 'string',
+  9|       default: "\n"
+  10|     },
+  11|     lineNumberSepalater: {
+  12|       type: 'string',
+  13|       default: "|"
+  14|     },
+  15|     enableMarkDownFormat: {
+  16|       type: 'boolean',
+
+
 - notIncludeRootInPath
 
   default: true

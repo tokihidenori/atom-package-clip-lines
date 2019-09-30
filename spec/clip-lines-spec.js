@@ -68,6 +68,18 @@ describe('CopyFileLines', () => {
         });
       });
 
+      describe("includeFilepathInSyntaxMarkDownHighlight: true", function() {
+        beforeEach(() => {
+          atom.config.set('clip-lines.includeFilepathInSyntaxMarkDownHighlight', true);
+        });
+
+        it("copy selected lines", () => {
+          CopyFileLines.copy();
+          fileExtention = filePath.split('.').pop();
+          expect(txtTrim(atom.clipboard.read())).toEqual(`\`\`\`${fileExtention}:${filePath}(1-4)1| 'use babel';2| 3| import { CompositeDisposable } from 'atom';4| \`\`\``);
+        });
+      });
+
       describe("notIncludeRootInPath: false", function() {
         beforeEach(() => {
           atom.config.set('clip-lines.notIncludeRootInPath', false);
