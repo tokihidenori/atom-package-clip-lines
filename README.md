@@ -67,6 +67,6 @@ path/to/README.md: 1-20
   16|       type: 'boolean',
 
 
-- notIncludeRootInPath
+- onlyIncludeProjectPath
 
   default: true

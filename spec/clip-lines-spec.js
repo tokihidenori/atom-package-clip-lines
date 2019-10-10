@@ -68,9 +68,9 @@ describe('CopyFileLines', () => {
         });
       });
 
-      describe("includeFilepathInSyntaxMarkDownHighlight: true", function() {
+      describe("includeFilepathInMarkDownSyntaxHighlight: true", function() {
         beforeEach(() => {
-          atom.config.set('clip-lines.includeFilepathInSyntaxMarkDownHighlight', true);
+          atom.config.set('clip-lines.includeFilepathInMarkDownSyntaxHighlight', true);
         });
 
         it("copy selected lines", () => {
@@ -80,9 +80,9 @@ describe('CopyFileLines', () => {
         });
       });
 
-      describe("notIncludeRootInPath: false", function() {
+      describe("onlyIncludeProjectPath: false", function() {
         beforeEach(() => {
-          atom.config.set('clip-lines.notIncludeRootInPath', false);
+          atom.config.set('clip-lines.onlyIncludeProjectPath', false);
         });
 
         it("copy selected lines", () => {
